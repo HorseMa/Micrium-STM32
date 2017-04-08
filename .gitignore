@@ -1,6 +1,6 @@
 Flash/
 settings/
-#*.ewp
-#*.ewd
-#*.dep
+*.ewp
+*.ewd
+*.dep
 *.ewt
