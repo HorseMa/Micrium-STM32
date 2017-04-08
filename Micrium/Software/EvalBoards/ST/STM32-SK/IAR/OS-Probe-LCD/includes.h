@@ -59,12 +59,14 @@
 #if (APP_PROBE_COM_EN == DEF_ENABLED)
 #include  <probe_com.h>
 
+#if defined UC_SHELL
+#include "shell.h"
+#endif
+
 #if (PROBE_COM_METHOD_RS232 == DEF_ENABLED)
 #include  <probe_rs232.h>
 #endif
 #endif
-
-
 
 
 #endif

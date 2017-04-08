@@ -571,6 +571,12 @@ static  void  App_InitProbe (void)
 #endif
 
 #if (APP_PROBE_COM_EN       == DEF_ENABLED)
+#if defined UC_SHELL
+    Shell_Init();             /*Initialize uC/Shell*/  
+    /*Add shell command*/
+    Shell_CmdTblAdd("trace", (SHELL_CMD[]){{"trace", trace},{0, 0 }}, &shell_err); /*--gnu C style, see Options for Target C/C++*/
+    Shell_CmdTblAdd("add", (SHELL_CMD[]){{"add", add},{0, 0 }}, &shell_err);       /*--gnu C style, see Options for Target C/C++*/
+#endif
     ProbeCom_Init();                                            /* Initialize the uC/Probe communications module.       */
 #if (PROBE_COM_METHOD_RS232 == DEF_ENABLED)
     ProbeRS232_Init(115200);
